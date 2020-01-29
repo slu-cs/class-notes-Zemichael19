@@ -9,11 +9,10 @@ console.log(x);
 i = 0
 j = 1
 total = 0
-
 while (total < 1000) {
   total = i + j
   i = j
   j = total
 }
 
-console.log(i);
+console.log(j);
