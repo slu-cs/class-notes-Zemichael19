@@ -14,3 +14,17 @@ for (const x of classes) {
   }
 }
 print (i);
+
+const Book = function(title, authors) {
+  this.title = title;
+  this.authors = authors;
+}
+
+Book.prototype.authorName = function(name) {
+  for (const x of authors) {
+    if (x===name) {
+      return name
+    }
+  }
+  
+}
