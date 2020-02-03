@@ -13,7 +13,7 @@ for (const x of classes) {
     i = x.number;
   }
 }
-print (i);
+console.log(i);;
 
 const Book = function(title, authors) {
   this.title = title;
@@ -26,5 +26,5 @@ Book.prototype.authorName = function(name) {
       return name
     }
   }
-  
+
 }
