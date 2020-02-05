@@ -1,7 +1,7 @@
 //syntax for console and file input
 
 const readline = require('readline');
-
+const fs = require('fs');
 //console configuration
 const user = readline.createInterface({
   input: process.stdin, output: process.stdout
@@ -10,8 +10,18 @@ const user = readline.createInterface({
 
 //console input
 user.question('Filename: ', function(filename) {
-  console.log(filename);
-});
+  //file configuration
+  const file = readline.createInterface({
+    input: fs.createReadStream(filename);
+  });
 
-//this part is't after the console input
-console.log('here');
+  //asynchronous line-by-line input
+  file.on('line', function(line) {
+    console.log(line);
+  });
+
+  file.on('close', function(){
+    process.exit(0);
+  })
+
+});
