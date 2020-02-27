@@ -4,7 +4,8 @@ const f1 = function() {
   return 2;
 }
 
-console.log(f1);
+const x = f1;
+console.log(x);
 
 const f2 = function() {
   return 4;
