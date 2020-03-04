@@ -16,7 +16,7 @@ app.get('/foo', function(request, response) {
 })
 
 //cs-linuxlab-19.stlawu.edu:3000/foo/bar
-app.get('/foo', function(request, response) {
+app.get('/foo/bar', function(request, response) {
   response.send('Hello bar');
 });
 
