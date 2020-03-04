@@ -1,8 +1,13 @@
-//hello world web server
+//bakery web server
 const express = require('express');
 
 //create the server
 const app = express();
+
+//ignore icon requests
+app.get('/favicon.ico', function(request, response) {
+  response.status(204).end();
+});
 
 //log requests to the console
 app.use(function(request, response, next) {
@@ -21,6 +26,9 @@ app.get('/', function(request, response) {
       </ul>`);
 });
 
+//routing
+app.use('/cakes', require('./cakes.js'));
+app.use('/pies', require('./pies.js'))
 //handle undefined routes
 app.use(function(request, response, next){
   console.log('Replied with 404');
